@@ -12,7 +12,7 @@ const Header: React.FC = () => {
 
   let left = (
     <div className="left">
-      <Link href="/" className="bold" data-active={isActive("/")}>
+      <Link href="/" className="bold a" data-active={isActive("/")}>
         Feed
       </Link>
       <style jsx>{`
@@ -20,7 +20,7 @@ const Header: React.FC = () => {
           font-weight: bold;
         }
 
-        Link {
+        .a {
           text-decoration: none;
           color: var(--geist-foreground);
           display: inline-block;
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
           color: gray;
         }
 
-        a + a {
+        .a + .a {
           margin-left: 1rem;
         }
       `}</style>
@@ -42,7 +42,7 @@ const Header: React.FC = () => {
   if (status === 'loading') {
     left = (
       <div className="left">
-        <Link href="/" className="bold" data-active={isActive("/")}>
+        <Link href="/" className="bold a" data-active={isActive("/")}>
           Feed
         </Link>
         <style jsx>{`
@@ -50,7 +50,7 @@ const Header: React.FC = () => {
             font-weight: bold;
           }
 
-          Link {
+          .a {
             text-decoration: none;
             color: var(--geist-foreground);
             display: inline-block;
@@ -60,7 +60,7 @@ const Header: React.FC = () => {
             color: gray;
           }
 
-          a + a {
+          .a + .a {
             margin-left: 1rem;
           }
         `}</style>
@@ -81,17 +81,17 @@ const Header: React.FC = () => {
   if (!session) {
     right = (
       <div className="right">
-        <Link href="/api/auth/signin" data-active={isActive('/signup')}>
+        <Link href="/api/auth/signin" data-active={isActive('/signup')} className="a">
           Log in
         </Link>
         <style jsx>{`
-          Link {
+          .a {
             text-decoration: none;
             color: var(--geist-foreground);
             display: inline-block;
           }
 
-          a + a {
+          .a + .a {
             margin-left: 1rem;
           }
 
@@ -99,7 +99,7 @@ const Header: React.FC = () => {
             margin-left: auto;
           }
 
-          .right a {
+          .right .a {
             border: 1px solid var(--geist-foreground);
             padding: 0.5rem 1rem;
             border-radius: 3px;
@@ -112,7 +112,7 @@ const Header: React.FC = () => {
   if (session) {
     left = (
       <div className="left">
-        <Link href="/" className="bold" data-active={isActive("/")}>
+        <Link href="/" className="bold a" data-active={isActive("/")}>
           Feed
         </Link>
         <Link href="/drafts" data-active={isActive('/drafts')}>
@@ -123,7 +123,7 @@ const Header: React.FC = () => {
             font-weight: bold;
           }
 
-          Link {
+          .a {
             text-decoration: none;
             color: var(--geist-foreground);
             display: inline-block;
@@ -133,7 +133,7 @@ const Header: React.FC = () => {
             color: gray;
           }
 
-          a + a {
+          .a + .a {
             margin-left: 1rem;
           }
         `}</style>
@@ -144,7 +144,7 @@ const Header: React.FC = () => {
         <p>
           {session.user.name} ({session.user.email})
         </p>
-        <Link href="/create">
+        <Link href="/create" className="a">
           <button>
             New post
           </button>
@@ -153,7 +153,7 @@ const Header: React.FC = () => {
           <a>Log out</a>
         </button>
         <style jsx>{`
-          Link {
+          .a {
             text-decoration: none;
             color: var(--geist-foreground);
             display: inline-block;
@@ -165,7 +165,7 @@ const Header: React.FC = () => {
             padding-right: 1rem;
           }
 
-          a + a {
+          .a + .a {
             margin-left: 1rem;
           }
 
@@ -173,7 +173,7 @@ const Header: React.FC = () => {
             margin-left: auto;
           }
 
-          .right a {
+          .right .a {
             border: 1px solid var(--geist-foreground);
             padding: 0.5rem 1rem;
             border-radius: 3px;
